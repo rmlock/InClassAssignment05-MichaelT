@@ -15,57 +15,54 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Player Name:"/>
+        android:text="Player Name:" />
 
     <EditText
         android:id="@+id/player_name_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Type Player Name Here"
-        />
+        android:hint="Type Player Name Here" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Player Number"/>
+        android:text="Player Number" />
 
     <EditText
+        android:id="@+id/player_number_edittext"
         android:layout_width="match_parent"
-        android:onClick="playerNumber"
         android:layout_height="wrap_content"
         android:hint="Type Player Here"
-        android:id="@+id/player_number_edittext"
-        />
+        android:onClick="playerNumber" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Player Note:"/>
+        android:text="Player Note:" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="playerNote"
-        android:hint="Type Note Here"
         android:id="@+id/player_note_edittext"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Type Note Here"
+        android:onClick="playerNote" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Clear"
-        android:onClick="clear_button"/>
+        android:onClick="clear_button"
+        android:text="Clear" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit Player Information"
-        android:onClick="savePlayerInfo"/>
+        android:onClick="savePlayerInfo"
+        android:text="Submit Player Information" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="See Roster"
-        android:onClick="seeRoster"/>
+        android:onClick="seeRoster"
+        android:text="See Roster" />
 
 </LinearLayout>

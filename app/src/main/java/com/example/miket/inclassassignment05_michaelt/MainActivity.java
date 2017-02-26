@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Player> playerList= new ArrayList<>();
+    ArrayList<Player> playerList = new ArrayList<>();
 //    private String nameInput;
 //    private int numberInput;
 //    private String noteInput;
@@ -26,16 +26,29 @@ public class MainActivity extends AppCompatActivity {
 //        playerList= new ArrayList<>();
     }
 
+    public void clear_button(View view) {
+        EditText playerInputName = (EditText) findViewById(R.id.player_name_edittext);
+        EditText playerInputNumber = (EditText) findViewById(R.id.player_number_edittext);
+        EditText playerInputNote = (EditText) findViewById(R.id.player_note_edittext);
+
+        playerInputName.setText(null);
+        playerInputNumber.setText(null);
+        playerInputNote.setText(null);
+
+        Toast t = Toast.makeText(this, "Form Cleared", Toast.LENGTH_SHORT);
+        t.show();
+    }
+
 
     public void savePlayerInfo(View view) {
         EditText playerInputName = (EditText) findViewById(R.id.player_name_edittext);
-        String nameInput= playerInputName.getText().toString();
+        String nameInput = playerInputName.getText().toString();
 
         EditText playerInputNumber = (EditText) findViewById(R.id.player_number_edittext);
         int numberInput = Integer.parseInt(playerInputNumber.getText().toString());
 
         EditText playerInputNote = (EditText) findViewById(R.id.player_note_edittext);
-        String noteInput= playerInputNote.getText().toString();
+        String noteInput = playerInputNote.getText().toString();
 
         Player p = new Player(nameInput, numberInput, noteInput);
         playerList.add(p);
@@ -53,5 +66,6 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("Player List", playerList);
         startActivity(intent);
     }
+
 
 }
