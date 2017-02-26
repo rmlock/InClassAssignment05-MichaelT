@@ -42,6 +42,6 @@ public class Player implements Serializable {
 
     @Override
     public String toString() {
-        return "Player name: " + name + "\nPlayer Number: " + playerNumber;
+        return "Player name: " + name + "\nPlayer Number: " + playerNumber + "\nPlayer Note: " + note;
     }
 }
