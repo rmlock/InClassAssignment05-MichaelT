@@ -10,8 +10,6 @@ import java.util.ArrayList;
 public class PlayerActivity extends AppCompatActivity {
 
     private String displayMessage = "";
-    private String name;
-    private int number;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,15 +20,12 @@ public class PlayerActivity extends AppCompatActivity {
         Intent intent = getIntent();
         ArrayList<Player> players = (ArrayList<Player>) intent.getSerializableExtra("Player List");
 
-
-//        ScrollView displayView = (ScrollView) findViewById(R.id.displayView);
-
         for (int i = 0; players.size()> i; i++) {
             String s= players.get(i).toString();
             displayMessage= displayMessage + s + "\n\n";
         }
 
         TextView rosterView= (TextView) findViewById(R.id.roster_textbox);
-        rosterView.setText("Roster: " + displayMessage);
+        rosterView.setText("Roster Information:" + "\n\n" + displayMessage);
     }
 }

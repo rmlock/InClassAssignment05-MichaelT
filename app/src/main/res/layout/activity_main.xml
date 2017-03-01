@@ -48,20 +48,17 @@
         android:onClick="playerNote" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/Buttons"
         android:onClick="clear_button"
         android:text="Clear" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/Buttons"
         android:onClick="savePlayerInfo"
         android:text="Submit Player Information" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/Buttons"
         android:onClick="seeRoster"
         android:text="See Roster" />
 
