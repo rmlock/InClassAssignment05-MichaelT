@@ -16,32 +16,8 @@ public class Player implements Serializable {
         this.note=note;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getPlayerNumber() {
-        return playerNumber;
-    }
-
-    public void setPlayerNumber(int playerNumber) {
-        this.playerNumber = playerNumber;
-    }
-
-    public String getNote() {
-        return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
-    }
-
     @Override
     public String toString() {
-        return "Player name: " + name + "\nPlayer Number: " + playerNumber + "\nPlayer Note: " + note;
+        return "Player Name: " + name + "\nPlayer Number: " + playerNumber + "\nPlayer Note: " + note;
     }
 }

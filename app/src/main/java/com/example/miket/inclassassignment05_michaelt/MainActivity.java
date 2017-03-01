@@ -12,18 +12,12 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<Player> playerList = new ArrayList<>();
-//    private String nameInput;
-//    private int numberInput;
-//    private String noteInput;
-//    private Player player;
-//    private ArrayList<Player> playerList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        playerList= new ArrayList<>();
     }
 
     public void clear_button(View view) {
@@ -57,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         playerInputNumber.setText(null);
         playerInputNote.setText(null);
 
-        Toast t = Toast.makeText(this, "Saved", Toast.LENGTH_SHORT);
+        Toast t = Toast.makeText(this, "Player Information Saved", Toast.LENGTH_SHORT);
         t.show();
     }
 
@@ -66,6 +60,4 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("Player List", playerList);
         startActivity(intent);
     }
-
-
 }
