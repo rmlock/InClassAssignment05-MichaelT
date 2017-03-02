@@ -15,7 +15,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PlayerActivity"></activity>
+        <activity
+            android:name="com.example.miket.inclassassignment05_michaelt.PlayerActivity"
+            android:label="Player Stats"
+            android:parentActivityName="com.example.miket.inclassassignment05_michaelt.MainActivity">
+
+            >
+
+
+        </activity>
     </application>
 
 </manifest>
