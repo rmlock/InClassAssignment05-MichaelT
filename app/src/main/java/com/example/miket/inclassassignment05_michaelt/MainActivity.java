@@ -10,6 +10,13 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    EditText playerInputNumber = null;
+    EditText playerInputName = null;
+    EditText playerInputNote = null;
+    String nameInput;
+    int numberInput;
+    boolean validNumber = false;
+    boolean validName = false;
 
     ArrayList<Player> playerList = new ArrayList<>();
 
@@ -21,13 +28,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clear_button(View view) {
-        EditText playerInputName = (EditText) findViewById(R.id.player_name_edittext);
-        EditText playerInputNumber = (EditText) findViewById(R.id.player_number_edittext);
-        EditText playerInputNote = (EditText) findViewById(R.id.player_note_edittext);
+        playerInputName = (EditText) findViewById(R.id.player_name_edittext);
+        playerInputNumber = (EditText) findViewById(R.id.player_number_edittext);
+        playerInputNote = (EditText) findViewById(R.id.player_note_edittext);
 
         playerInputName.setText(null);
         playerInputNumber.setText(null);
         playerInputNote.setText(null);
+        validName = false;
+        validNumber = false;
+
 
         Toast t = Toast.makeText(this, "Form Cleared", Toast.LENGTH_SHORT);
         t.show();
@@ -36,23 +46,45 @@ public class MainActivity extends AppCompatActivity {
 
     public void savePlayerInfo(View view) {
         EditText playerInputName = (EditText) findViewById(R.id.player_name_edittext);
-        String nameInput = playerInputName.getText().toString();
+        if (!playerInputName.getText().toString().isEmpty()) {
+            nameInput = playerInputName.getText().toString();
+            validName = true;
+        }
 
         EditText playerInputNumber = (EditText) findViewById(R.id.player_number_edittext);
-        int numberInput = Integer.parseInt(playerInputNumber.getText().toString());
+        if (!playerInputNumber.getText().toString().isEmpty()) {
+            numberInput = Integer.parseInt(playerInputNumber.getText().toString());
+            validNumber = true;
+        }
 
         EditText playerInputNote = (EditText) findViewById(R.id.player_note_edittext);
-        String noteInput = playerInputNote.getText().toString();
+        String noteInput = "";
+        if (playerInputNote.getText().toString().isEmpty()) {
+            noteInput = "No additional notes";
+        } else {
+            noteInput = playerInputNote.getText().toString();
+        }
+        if (!validName || !validNumber) {
 
-        Player p = new Player(nameInput, numberInput, noteInput);
-        playerList.add(p);
+            Toast e = Toast.makeText(this, "You are missing the name or the player number- check again", Toast.LENGTH_SHORT);
+            e.show();
 
-        playerInputName.setText(null);
-        playerInputNumber.setText(null);
-        playerInputNote.setText(null);
+        } else {
+            Player p = new Player(nameInput, numberInput, noteInput);
+            playerList.add(p);
+            playerInputName.setText(null);
+            playerInputNumber.setText(null);
+            playerInputNote.setText(null);
+            validName = false;
+            validNumber = false;
 
-        Toast t = Toast.makeText(this, "Player Information Saved", Toast.LENGTH_SHORT);
-        t.show();
+            Toast t = Toast.makeText(this, "Player Information Saved", Toast.LENGTH_SHORT);
+            t.show();
+
+
+        }
+
+
     }
 
     public void seeRoster(View view) {
