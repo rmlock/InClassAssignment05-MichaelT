@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_player">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -33,6 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Type Player Here"
+        android:inputType="number"
         android:onClick="playerNumber" />
 
     <TextView
@@ -44,6 +50,7 @@
         android:id="@+id/player_note_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
         android:hint="Type Note Here"
         android:onClick="playerNote" />
 
@@ -63,3 +70,4 @@
         android:text="See Roster" />
 
 </LinearLayout>
+</ScrollView>

@@ -10,8 +10,33 @@ public class Player implements Serializable {
     private String note;
 
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getPlayerNumber() {
+        return playerNumber;
+    }
+
+    public void setPlayerNumber(int playerNumber) {
+        this.playerNumber = playerNumber;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
     public Player (String name, int playerNumber, String note) {
         this.name=name;
+
         this.playerNumber=playerNumber;
         this.note=note;
     }
