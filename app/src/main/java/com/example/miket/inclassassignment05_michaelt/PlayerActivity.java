@@ -2,8 +2,10 @@ package com.example.miket.inclassassignment05_michaelt;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -14,6 +16,7 @@ public class PlayerActivity extends AppCompatActivity {
 
     private String displayMessage = "";
     private boolean imageSwitcher = true;
+    ArrayList<Player> players;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,14 +27,14 @@ public class PlayerActivity extends AppCompatActivity {
         Intent intent = getIntent();
         LinearLayout mainView = (LinearLayout) findViewById(R.id.mainView);
 
-        ArrayList<Player> players = (ArrayList<Player>) intent.getSerializableExtra("Player List");
+        players = (ArrayList<Player>) intent.getSerializableExtra("Player List");
 
         for (int i = 0; players.size()> i; i++) {
             LinearLayout wrapper = new LinearLayout(this);
             wrapper.setOrientation(LinearLayout.VERTICAL);
             wrapper.setPadding(10, 10, 10, 10);
 
-            wrapper.setBackgroundColor(Color.WHITE);
+            wrapper.setBackgroundColor(Color.LTGRAY);
 
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
@@ -63,7 +66,7 @@ public class PlayerActivity extends AppCompatActivity {
                 icon.setScaleType(ImageView.ScaleType.CENTER_CROP);
                 imageSwitcher = false;
             } else {
-                icon.setImageResource(R.drawable.footbal);
+                icon.setImageResource(R.drawable.football);
                 icon.setScaleType(ImageView.ScaleType.CENTER_CROP);
                 imageSwitcher = true;
 
@@ -75,4 +78,23 @@ public class PlayerActivity extends AppCompatActivity {
         }
 
     }
+
+    public void emailCheck(View view) {
+        String emailMessage = "Players: " + '\n';
+        Intent email = new Intent(Intent.ACTION_SENDTO);
+        email.setData(Uri.parse("mailto:"));
+        email.putExtra(Intent.EXTRA_SUBJECT, "Couching Stats");
+        for (int i = 0; players.size() > i; i++) {
+            emailMessage += "Name: " + players.get(i).getName() + '\n' + "Number: " + players.get(i).getPlayerNumber() + '\n' + "Notes: " + players.get(i).getNote() + '\n' + '\n';
+        }
+        email.putExtra(Intent.EXTRA_TEXT, emailMessage);
+
+
+        if (email.resolveActivity(getPackageManager()) != null) {
+            startActivity(email);
+        }
+    }
+
 }
+
+
