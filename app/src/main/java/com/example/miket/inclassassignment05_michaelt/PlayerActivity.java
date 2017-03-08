@@ -29,7 +29,7 @@ public class PlayerActivity extends AppCompatActivity {
 
         players = (ArrayList<Player>) intent.getSerializableExtra("Player List");
 
-        for (int i = 0; players.size()> i; i++) {
+        for (int i = 0; players.size() > i; i++) {
             LinearLayout wrapper = new LinearLayout(this);
             wrapper.setOrientation(LinearLayout.VERTICAL);
             wrapper.setPadding(10, 10, 10, 10);
@@ -71,8 +71,6 @@ public class PlayerActivity extends AppCompatActivity {
                 imageSwitcher = true;
 
             }
-
-
 
 
         }
