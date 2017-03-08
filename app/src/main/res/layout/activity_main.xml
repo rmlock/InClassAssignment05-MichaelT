@@ -26,7 +26,7 @@
         android:id="@+id/player_name_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Type Player Name Here" />
+        android:hint="Player Name" />
 
     <TextView
         android:layout_width="match_parent"
@@ -37,9 +37,8 @@
         android:id="@+id/player_number_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Type Player Here"
-        android:inputType="number"
-        android:onClick="playerNumber" />
+        android:hint="Player Number"
+        android:inputType="number" />
 
     <TextView
         android:layout_width="match_parent"
@@ -51,8 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
-        android:hint="Type Note Here"
-        android:onClick="playerNote" />
+        android:hint="Type Note Here" />
 
     <Button
         style="@style/Buttons"
