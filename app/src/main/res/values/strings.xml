@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Coaching App</string>
+    <string name="saved_username"></string>
+    <string name="saved_username_default">Coach Coachie McCoacherson</string>
+
 
 </resources>

@@ -1,71 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_player"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/activity_player">
+    android:layout_height="match_parent">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.miket.inclassassignment05_michaelt.MainActivity">
-
-
-    <TextView
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Player Name:" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.example.miket.inclassassignment05_michaelt.MainActivity">
 
-    <EditText
-        android:id="@+id/player_name_edittext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Player Name" />
+        <LinearLayout
+            android:id="@+id/coachNameArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Player Number" />
+            <TextView
+                android:id="@+id/usernameDisplayed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Welcome Coach!"
+                android:textAlignment="center" />
 
-    <EditText
-        android:id="@+id/player_number_edittext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Player Number"
-        android:inputType="number" />
+            <EditText
+                android:id="@+id/coachNameEntering"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your name here"
+                android:textAlignment="center" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Player Note:" />
+            <Button
+                android:id="@+id/setName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="setCoachName"
+                android:text="Click Here to save your name coach!"
+                android:textAlignment="center"
 
-    <EditText
-        android:id="@+id/player_note_edittext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:hint="Type Note Here" />
+                />
 
-    <Button
-        style="@style/Buttons"
-        android:onClick="clear_button"
-        android:text="Clear" />
 
-    <Button
-        style="@style/Buttons"
-        android:onClick="savePlayerInfo"
-        android:text="Submit Player Information" />
+        </LinearLayout>
 
-    <Button
-        style="@style/Buttons"
-        android:onClick="seeRoster"
-        android:text="See Roster" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Player Name:" />
 
-</LinearLayout>
+        <EditText
+            android:id="@+id/player_name_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type Player Name Here" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Player Number" />
+
+        <EditText
+            android:id="@+id/player_number_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type Player Here"
+            android:inputType="number" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Player Note:" />
+
+        <EditText
+            android:id="@+id/player_note_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type Note Here"
+            android:inputType="textMultiLine" />
+
+        <Button
+            style="@style/Buttons"
+            android:onClick="clear_button"
+            android:text="Clear" />
+
+        <Button
+            style="@style/Buttons"
+            android:onClick="savePlayerInfo"
+            android:text="Submit Player Information" />
+
+        <Button
+            style="@style/Buttons"
+            android:onClick="seeRoster"
+            android:text="See Roster" />
+
+    </LinearLayout>
 </ScrollView>
